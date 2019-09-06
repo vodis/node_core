@@ -57,7 +57,7 @@ button:focus {
 
 header h1 {
     text-align: center;
-    color: #333333;
+    color: steelblue;
     margin-top: 30px;
     margin-bottom: 50px
 }
@@ -122,6 +122,10 @@ left: 50%;
 }
 
 footer {
-    border-top: 2px solid #333333;
+    border-top: 2px solid steelblue;
     text-align: center;
+}
+
+footer p {
+    color: steelblue;
 }
