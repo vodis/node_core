@@ -6,6 +6,55 @@ body {
     max-width: 650px;
 }
 
+input {
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #888888;
+    background: #888888;
+    color: white;
+    padding: 8px;
+}
+
+button:hover,
+button:active {
+    background: #5d5d5d;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* -->Page 404 */
+.page-404 {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.page-404 h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: steelblue;
+    color: white;
+    line-height: 16px;
+}
+
+.page-404 p {
+    position: relative;
+    color: steelblue;
+    top: 40px;
+    text-align: right;
+}
+/* Page 404--> */
+
 header h1 {
     text-align: center;
     color: #333333;

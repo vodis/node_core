@@ -10,11 +10,14 @@ const app = express();
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
+const componentsPath = path.join(__dirname, '../templates/components');
+
 
 // Setup handlebars engine and views location
 app.set('view engine', 'hbs');
 app.set('views', viewsPath);
 hbs.registerPartials(partialsPath);
+hbs.registerPartials(componentsPath);
 
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath));
@@ -23,7 +26,8 @@ app.get('', (req, res) => {
     res.render('index', {
         headTitle: "Curse Node.js",
         headCSSLink: "/css/main.css",
-        headJSLink: "js/index.js",
+        headJSLink: "",
+        JSLink: "js/index.js",
         title: "Weather",
         name: "Node.js"
     })
@@ -48,7 +52,7 @@ app.get('/weather', (req, res) => {
         })
     }
 
-    geocode(req.query.address, (error, { latitude, longitude, location }) => {
+    geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
         if (error) {
             return res.send({ error });
         };
@@ -64,13 +68,7 @@ app.get('/weather', (req, res) => {
                 address: req.query.address,
             });
         })
-    });
-
-    // res.send({
-    //     forecast: "It is sunny",
-    //     location: "Kharkiv",
-    //     address: req.query.address,
-    // })
+    })
 });
 
 app.get('/products', (req, res) => {
@@ -82,6 +80,12 @@ app.get('/products', (req, res) => {
     res.send({
         products: [],
     })
+})
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        headCSSLink: "/css/main.css",
+    });
 })
 
 app.listen(4000, () => {

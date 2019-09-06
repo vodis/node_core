@@ -1,6 +1,7 @@
 node_modules
 
 keys
+playground
 
 package-lock.json
 yarn.lock
