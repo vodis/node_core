@@ -30,15 +30,22 @@ app.get('', (req, res) => {
         headJSLink: "",
         JSLink: "js/index.js",
         title: "Weather",
-        name: "Node.js"
+        name: "Node.js",
+        placeholder: "Location.."
     })
 })
 
-app.get('/about', (req, res) => {
-    res.send({
-        about: [],
+app.get('/youtube', (req, res) => {
+    res.render('index', {
+        headTitle: "YouTube",
+        headCSSLink: "/css/main.css",
+        headJSLink: "",
+        JSLink: "js/youtube.js",
+        title: "YouTube",
+        name: "Node.js",
+        placeholder: "Movies..",
     })
-});
+})
 
 app.get('/help', (req, res) => {
     res.send({
