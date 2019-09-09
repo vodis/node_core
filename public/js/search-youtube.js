@@ -11,7 +11,10 @@ weatherForm.addEventListener('submit', (e) => {
 
     fetch('/youtube-api?movie=' + name)
     .then((response) => {
-        response.json()
+        if (response.status > 200) {
+            links.innerHTML = '<li class="youtube_link error">Try later! Some problem with network connection.</li>';
+        } else {
+            response.json()
            .then(({ movie }) => {
                movie.map(node => {
                    outHTML += `<li class="youtube__link">${node.title} - <a href=${node.link}>${node.link}</a></li>`;
@@ -19,5 +22,6 @@ weatherForm.addEventListener('submit', (e) => {
 
                links.innerHTML = outHTML;
            })
+        }
     });
 });
