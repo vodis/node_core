@@ -22,10 +22,15 @@ const youtube = async (movie, callback) => {
     // Extract the results from the page.
     const links = await page.evaluate(resultsSelector => {
         const anchors = Array.from(document.querySelectorAll(resultsSelector));
+        
         return anchors.map(anchor => {
-            debugger;
             const title = anchor.textContent.split('|')[0].trim();
-            return `${title} - ${anchor.href}`;
+            
+            // Return object as result.
+            return {
+                title,
+                link: anchor.href,
+            }
         });
     }, resultsSelector);
 
@@ -34,6 +39,4 @@ const youtube = async (movie, callback) => {
     await browser.close();
 };
 
-youtube("New Movies", (callback) => {
-    console.log(callback);
-});
+module.exports = youtube;

@@ -3,6 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
+const youtube = require('./utils/youtube');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -31,7 +32,8 @@ app.get('', (req, res) => {
         JSLink: "js/index.js",
         title: "Weather",
         name: "Node.js",
-        placeholder: "Location.."
+        placeholder: "Location..",
+        weather: true
     })
 })
 
@@ -40,12 +42,27 @@ app.get('/youtube', (req, res) => {
         headTitle: "YouTube",
         headCSSLink: "/css/main.css",
         headJSLink: "",
-        JSLink: "js/youtube.js",
+        JSLink: "js/search-youtube.js",
         title: "YouTube",
         name: "Node.js",
         placeholder: "Movies..",
+        youtube: true
     })
 })
+
+app.get('/youtube-api', (req, res) => {
+    if (!req.query.movie) {
+        return res.send({
+            error: "You must state name of movie."
+        });
+    }
+
+    youtube(req.query.movie, (callback) => {
+        res.send({
+            movie: callback
+        })
+    });
+});
 
 app.get('/help', (req, res) => {
     res.send({

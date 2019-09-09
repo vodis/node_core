@@ -1,3 +1,9 @@
 <main class="main-content">
-    {{>formWeather}}
+    {{#if weather}}
+        {{>formWeather}}
+    {{/if}}
+
+    {{#if youtube}}
+        {{>formYouTube}}
+    {{/if}}
 </main>
