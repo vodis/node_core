@@ -1,12 +1,12 @@
 const weatherForm = document.querySelector('form');
 const inputForm = document.querySelector('input');
 const links = document.querySelector('#youtube__links');
-let outHTML = "";
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
     const name = inputForm.value;
+    let outHTML = "";
     links.innerHTML = '<li class="youtube_link waiting">Loading..</li>';
 
     fetch('/youtube-api?movie=' + name)
