@@ -1,0 +1,11 @@
+{
+  "name": "NodeJs YouTube parser",
+  "icons": [
+    {
+      "src": "./favicon.ico",
+      "sizes": "36x36",
+      "type": "image\/ico",
+      "density": "o.75"
+    }
+  ]
+}

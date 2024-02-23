@@ -1,10 +1,11 @@
 {
-  "name": "curse",
+  "name": "node-js-youtube-parser",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "start:dev": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +13,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "hbs": "^4.0.4",
-    "puppeteer": "^1.19.0",
+    "nodemon": "^3.0.3",
+    "puppeteer": "^22.1.0",
     "request": "^2.88.0"
   }
 }

@@ -6,6 +6,25 @@ body {
     max-width: 650px;
 }
 
+h3 {
+    color: rgb(15, 15, 15);
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 input {
     border: 1px solid #cccccc;
     padding: 8px;
@@ -42,14 +61,14 @@ button:focus {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    background: steelblue;
+    background: #ff0a00;
     color: white;
     line-height: 16px;
 }
 
 .page-404 p {
     position: relative;
-    color: steelblue;
+    color: #ff0a00;
     top: 40px;
     text-align: right;
 }
@@ -57,7 +76,7 @@ button:focus {
 
 header h1 {
     text-align: center;
-    color: steelblue;
+    color: #ff0a00;
     margin-top: 30px;
     margin-bottom: 50px
 }
@@ -100,7 +119,7 @@ header h1 {
 }
 
 .menu-link__endpoint a {
-    color: brown;
+    color: gray;
     text-decoration: none;
     text-transform: uppercase;
     position: relative;
@@ -112,20 +131,83 @@ header h1 {
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-/*--adjust as necessary--*/
-color: #a52a2a;
-font-size: 18px;
-padding-right: 0.5em;
-position: absolute;
-top: 15px;
-left: 50%;
+    /*--adjust as necessary--*/
+    color: gray;
+    font-size: 18px;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 15px;
+    left: 50%;
 }
 
 footer {
-    border-top: 2px solid steelblue;
+    border-top: 2px solid #ff0a00;
     text-align: center;
 }
 
 footer p {
-    color: steelblue;
+    color: #ff0a00;
+}
+
+.youtube__link {
+    margin-bottom: 16px;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+}
+
+.card__img {
+    width: 360px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.card__img img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.card__meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 0 8px;
+}
+.card__meta p {
+    color: #606060;
+    font-size: 12px;
+}
+
+.author__img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #cccccc;
+    overflow: hidden;
+}
+
+.author__img img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.my-1 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.mx-1 {
+    margin-left: 8px;
+    margin-right: 8px;
 }
